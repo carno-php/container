@@ -1,0 +1,29 @@
+{
+  "name": "carno-php/container",
+  "license": "MIT",
+  "provide": {
+    "psr/container-implementation": "1.0"
+  },
+  "require": {
+    "php": "^7.2",
+    "psr/container": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~7"
+  },
+  "autoload": {
+    "psr-4": {
+      "Carno\\Container\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Carno\\Container\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
