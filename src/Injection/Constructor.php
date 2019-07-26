@@ -13,7 +13,7 @@ trait Constructor
     /**
      * @param string $class
      * @param mixed ...$args
-     * @return object
+     * @return object|mixed
      */
     private function creating(string $class, ...$args)
     {

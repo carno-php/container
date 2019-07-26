@@ -32,7 +32,7 @@ class Container implements ContainerInterface
 
     /**
      * @param string $id
-     * @return object
+     * @return object|mixed
      */
     public function get($id)
     {
@@ -46,7 +46,7 @@ class Container implements ContainerInterface
     /**
      * @param string $id
      * @param object $object
-     * @return object
+     * @return object|mixed
      */
     public function set(string $id, $object)
     {
@@ -57,7 +57,7 @@ class Container implements ContainerInterface
     /**
      * @param string $class
      * @param mixed ...$args
-     * @return object
+     * @return object|mixed
      */
     public function object(string $class, ...$args)
     {

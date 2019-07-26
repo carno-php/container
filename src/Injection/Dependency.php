@@ -49,7 +49,7 @@ class Dependency
     }
 
     /**
-     * @return object|null
+     * @return object|mixed|null
      */
     public function object()
     {
