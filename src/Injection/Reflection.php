@@ -54,7 +54,7 @@ class Reflection
      */
     public function __construct(Container $container, string $class, array $args = [])
     {
-        $this->used = new Used;
+        $this->used = new Used();
         $this->container = $container;
         $this->reflection = $ref = new ReflectionClass($class);
 
@@ -103,14 +103,14 @@ class Reflection
     /**
      * @param object $object
      * @param string $name
-     * @param $data
+     * @param object $depends
      * @return bool
      */
-    public function setProperty(object $object, string $name, $data) : bool
+    public function setProperty($object, string $name, $depends) : bool
     {
         if ($property = ($this->propertyKeepers[$name] ?? $this->reflection)->getProperty($name)) {
             $property->isPublic() || $property->setAccessible(true);
-            $property->setValue($object, $data);
+            $property->setValue($object, $depends);
             return true;
         } else {
             return false;
@@ -178,7 +178,7 @@ class Reflection
                             continue;
                         }
                         // renaming
-                        $name = $keeper->getName().'::'.$name;
+                        $name = $keeper->getName() . '::' . $name;
                     }
                     // check keeper
                     $this->reflection->getName() === $linker->getName() || $this->propertyKeepers[$name] = $linker;

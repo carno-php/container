@@ -39,7 +39,7 @@ class GeneralTest extends TestCase
         }
 
         $this->assertTrue($e instanceof ObjectNotFoundException);
-        $this->assertTrue(DI::set('test-id', new stdClass) instanceof stdClass);
+        $this->assertTrue(DI::set('test-id', new stdClass()) instanceof stdClass);
         $this->assertTrue(DI::has('test-id'));
     }
 

@@ -34,10 +34,10 @@ class AbstractClassTest extends TestCase
         $this->assertTrue(($objBB = $obj->abaB()) instanceof TestB);
 
         // test singleton
-        $this->assertEquals(spl_object_id($objA->getB()), spl_object_id($objB));
-        $this->assertEquals(spl_object_id($objA->getB()->getC()), spl_object_id($objC));
+        $this->assertEquals(spl_object_hash($objA->getB()), spl_object_hash($objB));
+        $this->assertEquals(spl_object_hash($objA->getB()->getC()), spl_object_hash($objC));
 
-        $this->assertEquals(spl_object_id($objAC), spl_object_id($objC));
-        $this->assertEquals(spl_object_id($objBB), spl_object_id($objB));
+        $this->assertEquals(spl_object_hash($objAC), spl_object_hash($objC));
+        $this->assertEquals(spl_object_hash($objBB), spl_object_hash($objB));
     }
 }

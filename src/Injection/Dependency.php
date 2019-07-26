@@ -51,7 +51,7 @@ class Dependency
     /**
      * @return object|null
      */
-    public function object() : ?object
+    public function object()
     {
         if ($this->di->has($this->class)) {
             return $this->di->get($this->class);

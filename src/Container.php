@@ -32,9 +32,9 @@ class Container implements ContainerInterface
 
     /**
      * @param string $id
-     * @return mixed
+     * @return object
      */
-    public function get($id) : object
+    public function get($id)
     {
         if (isset($this->instances[$id])) {
             return $this->instances[$id];
@@ -45,20 +45,21 @@ class Container implements ContainerInterface
 
     /**
      * @param string $id
-     * @param mixed $object
-     * @return mixed
+     * @param object $object
+     * @return object
      */
-    public function set(string $id, object $object) : object
+    public function set(string $id, $object)
     {
+        assert(is_object($object));
         return $this->instances[$id] = $object;
     }
 
     /**
      * @param string $class
      * @param mixed ...$args
-     * @return mixed
+     * @return object
      */
-    public function object(string $class, ...$args) : object
+    public function object(string $class, ...$args)
     {
         return $this->creating($class, ...$args);
     }

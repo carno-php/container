@@ -15,7 +15,7 @@ trait Constructor
      * @param mixed ...$args
      * @return object
      */
-    private function creating(string $class, ...$args) : object
+    private function creating(string $class, ...$args)
     {
         $ref = new Reflection($this, $class, $args);
 

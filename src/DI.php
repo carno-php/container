@@ -27,7 +27,7 @@ final class DI
      */
     private static function default() : Container
     {
-        return self::$container ?? self::$container = new Container;
+        return self::$container ?? self::$container = new Container();
     }
 
     /**
